@@ -1,0 +1,20 @@
+/// <summary>  
+///  This class will preform all of the automatic responses a charecter will have to the enviornment, will be useable by both players and npcs.
+///  To function, this class assumes the calling of the following events,
+///     for(i=0; i < serverUsers.length; i++) {
+///       public event EventHandler CpIdentity ();
+///
+///     }
+///     public event EventHandler Cp; 
+///     public event EventHandler Cp; 
+///     public event EventHandler Cp; 
+///     public event EventHandler Cp; 
+/// </summary>
+public class Properties {
+
+  protected void OnCpIdentity () {
+    public event EventHandler CpIdentityPossibility (Math)
+  }
+  
+
+}
