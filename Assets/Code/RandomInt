@@ -1,0 +1,3 @@
+[SerializableAttribute]
+[ComVisibleAttribute(true)]
+public class RandomInt
