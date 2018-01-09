@@ -3,6 +3,7 @@
 ///  To function, this class assumes the calling of the following events,
 ///
 ///     identitys = []
+///     disguises = []
 ///     for(i=0; i < serverUsers.length; i++) {
 ///       public event EventHandler CpIdentity ();
 ///     }
@@ -11,21 +12,49 @@
 ///       else {
 ///         return true
 ///         identitys.push[identity]
+///         if(abs(tan(cos((identity*50)-1)))*10 >= 10)
+///         {
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 - 5)
+///         } else {
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 > 10)
+///         }
+///         disguises.push[random]
 ///       }
+///       OnChangeDisguise (identity)
+///       {
+///         if(abs(tan(cos((identity*50)-1)))*10 >= 10)
+///         {
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 - 5)
+///         } else {
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 > 10)
+///         }
+///         disguises[position IndexOf(identitys, identity)] = random
+///       }
+///
+///
+///
+///     }
+///     OnSomeoneDied(identity, killer)
+///     {
+///     Do whatever happens when someone dies?
 ///     }
 ///
-///     public event EventHandler Cp; 
+///     Note: All above code would go in the Network Manager or, whatever is keeping track of this stuff
 ///
-///     public event EventHandler Cp; 
+///     public event EventHandler CpHit(damage, recipient, sender); Note: this would be called inside the player gameObject
+///
+///     public event EventHandler Cp ; 
 ///
 ///     public event EventHandler Cp; 
 ///
 ///     public event EventHandler Cp; 
 /// </summary>
-public class Properties : NetworkBehavior
+
+public class CharecterProperties : NetworkBehavior
 {
   if(!isLocalPlayer) {return}
   public int identity = 0
+  private int hitpoints = 100
   public bool searching = true
   
   protected void OnCpIdentity () 
@@ -39,7 +68,22 @@ public class Properties : NetworkBehavior
       } else {identity++}
     }
   }
-///<code>
-/// pardon my sloppy Xml comments, will fix at a later time, the above event response basicaly starts throwing out possible identitys to the server, and then finaly when the server sees a new identity, it confirms it, adds it to its list and the client makes its identity a Random of the number recorded by the server.
-///</code>
+///<summary>
+/// Pardon my sloppy Xml comments, will fix at a later time, the above event response basicaly starts throwing out possible identitys to the server, and then finaly when the server sees a new identity, it confirms it, adds it to its list and the client makes its identity a Random of the number recorded by the server.
+/// Then the "server" or whatever is proscessing these requests asks for a disguise and the player responds with a random number one through ten.
+///</summary>
+
+  protected void OnCpHit (damage, recipient, sender) 
+  {
+    if(recipient != identity) {return}
+    hitpoints = hitpoints - damage
+    if(hitpoints <= 0) 
+    {
+    public event EventHandler SomeoneDied(identity, sender)
+    } else {
+/// <code>
+/// Taking damage sounds or, effects, or something
+/// </code>
+    }
+  }
 }
