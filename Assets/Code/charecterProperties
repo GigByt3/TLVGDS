@@ -12,7 +12,7 @@
 ///       else {
 ///         return true
 ///         identitys.push[identity]
-///         if(abs(tan(cos((identity*50)-1)))*10 >= 10);
+///         if();
 ///         {
 ///           random = rnd(abs(tan(cos((identity*50)-1)))*10 - 5);
 ///         } else {
