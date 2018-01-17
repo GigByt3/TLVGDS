@@ -12,23 +12,23 @@
 ///       else {
 ///         return true
 ///         identitys.push[identity]
-///         if(abs(tan(cos((identity*50)-1)))*10 >= 10)
+///         if(abs(tan(cos((identity*50)-1)))*10 >= 10);
 ///         {
-///           random = rnd(abs(tan(cos((identity*50)-1)))*10 - 5)
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 - 5);
 ///         } else {
-///           random = rnd(abs(tan(cos((identity*50)-1)))*10 > 10)
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 > 10);
 ///         }
-///         disguises.push[random]
+///         disguises.push[random];
 ///       }
 ///       OnChangeDisguise (identity)
 ///       {
-///         if(abs(tan(cos((identity*50)-1)))*10 >= 10)
+///         if(abs(tan(cos((identity*50)-1)))*10 >= 10);
 ///         {
-///           random = rnd(abs(tan(cos((identity*50)-1)))*10 - 5)
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 - 5);
 ///         } else {
-///           random = rnd(abs(tan(cos((identity*50)-1)))*10 > 10)
+///           random = rnd(abs(tan(cos((identity*50)-1)))*10 > 10);
 ///         }
-///         disguises[position IndexOf(identitys, identity)] = random
+///         disguises[position IndexOf(identitys, identity)] = random;
 ///       }
 ///
 ///
@@ -53,9 +53,9 @@
 public class CharecterProperties : NetworkBehavior
 {
   if(!isLocalPlayer) {return}
-  public int identity = 0
-  private int hitpoints = 100
-  public bool searching = true
+  public int identity = 0;
+  private int hitpoints = 100;
+  public bool searching = true;
   
   protected void OnCpIdentity () 
   {
@@ -63,8 +63,8 @@ public class CharecterProperties : NetworkBehavior
     {
       if(public event EventHandler CpIdentityPossibility (identity)) 
       {
-        searching = false
-        identity = Random(identity)
+        searching = false;
+        identity = Random(identity);
       } else {identity++}
     }
   }
@@ -75,9 +75,9 @@ public class CharecterProperties : NetworkBehavior
 
   protected void OnCpHit (damage, recipient, sender) 
   {
-    if(recipient != identity) {return}
-    hitpoints = hitpoints - damage
-    if(hitpoints <= 0) 
+    if(recipient != identity) {return};
+    hitpoints = hitpoints - damage;
+    if(hitpoints <= 0);
     {
     public event EventHandler SomeoneDied(identity, sender)
     } else {
