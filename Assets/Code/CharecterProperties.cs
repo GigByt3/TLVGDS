@@ -1,1 +1,1 @@
-
+public class charecterProperties : NetworkBehavior
