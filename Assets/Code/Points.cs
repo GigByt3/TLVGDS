@@ -1,4 +1,4 @@
-public class points : Networek Behavior 
-{
+//public class points : NetworkBehavior 
+//{
   
-}
+//}
