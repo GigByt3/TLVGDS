@@ -1,1 +1,4 @@
-public class charecterProperties : NetworkBehavior
+//public class charecterProperties : NetworkBehavior
+//{
+
+//}

@@ -1,10 +1,11 @@
+/*
 public class CharecterMananager : Network
-{
+//{
     public string  myField = string.Empty;
 
-    public MyClass()
-    {
-    }
+ //   public MyClass()
+ //   {
+ //   }
 
     public void MyMethod(int parameter1, string parameter2)
     {
@@ -23,3 +24,4 @@ public class CharecterMananager : Network
 
     } 
 }
+*/
