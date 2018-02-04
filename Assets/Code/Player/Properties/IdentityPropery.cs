@@ -27,5 +27,4 @@ public class IdentityProperty : NetworkBehaviour
         }
     }
     #endregion
-
 }
