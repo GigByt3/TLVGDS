@@ -8,7 +8,7 @@ public class Player
     public delegate int statsToServer(stats);
     public event EventHandler Player(stats);
     int[] playerInfo = new int[x, y, NetworkPlayer.ipAddress, 100, class, precivedId];
-    /// Structure: [x, y, id, hp, class#, precievedId#]
+    /// Structure: [x, y, id, hp, class#, precievedClass#]
     /// Class# and precievedId# corespond to classes on a server based array
 
     void Update() {
