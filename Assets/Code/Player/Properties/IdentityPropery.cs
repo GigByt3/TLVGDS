@@ -11,7 +11,7 @@ public class IdentityProperty : NetworkBehaviour
 {
     #region Fields
     [SyncVar]
-    public String trueIdentity = SystemInfo.deviceUniqueIdentifier;
+    public string trueIdentity = SystemInfo.deviceUniqueIdentifier;
     [SyncVar]
     public float precievedIdentity = ;
     #endregion
