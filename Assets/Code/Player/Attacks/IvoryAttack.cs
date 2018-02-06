@@ -1,4 +1,4 @@
-public class IvoryAttack : BaseAtack
+public class IvoryAttack : BasePlayerAtack
 {
 
 }
