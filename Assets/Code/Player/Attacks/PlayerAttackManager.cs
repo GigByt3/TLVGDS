@@ -26,7 +26,7 @@ public class PlayerAttackManager : NetworkBehaviour
     /// </summary>
     private void Update()
     {
-        if(!isLocalPlayer) { return; } // Do not check for inputs on other players.
+        if(!hasAuthority) { return; } // Do not check for inputs on other players.
 
         // Calculate current rotation between mouse cursor position and player game object, which we will imply is the parent object.
         Vector3 mousePosWorldCoords = playerCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
