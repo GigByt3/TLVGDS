@@ -1,7 +1,7 @@
 public class IvoryAttack : BasePlayerAttack
 {
 
-    public override ServerAttackMethod(Vector3 aimingVector)
+    public override void ServerAttackMethod(Vector3 aimingVector)
     { 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, aimingVector, range);
         
