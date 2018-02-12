@@ -1,11 +1,10 @@
 public class IvoryAttack : BasePlayerAttack
 {
-
     public override void ServerAttackMethod(Vector3 aimingVector)
     { 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, aimingVector, range);
         
-        int poison = (int)EffectType.HealthPerSecond 2
+        int poison = (2)EffectType.HealthPerSecond 
         // Hit logic
         if (hit.transform != null)
         {
