@@ -33,7 +33,7 @@ public class PlayerMovementController : NetworkBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        if(!isLocalPlayer) { return; }
+        if(!hasAuthority) { return; }
 
         controller.Move(new Vector2(Input.GetAxis(horizontalMovementAxis) * acceleration * Time.fixedDeltaTime, Input.GetAxis(verticalMovementAxis) * acceleration * Time.fixedDeltaTime));
     }
