@@ -13,17 +13,17 @@ public class IdentityProperty : NetworkBehaviour
     [SyncVar]
     public string trueIdentity = SystemInfo.deviceUniqueIdentifier;
     [SyncVar]
-    public float precievedIdentity = ;
+    public float precievedIdentity = 4;
     #endregion
 
     #region Events
-    public delegate void _OnPreceivedIdentityChanged(object source; eventArgs args);
-    public event _OnPreceivedIdentityChanged OnPreceivedIdentityChanged;
-    protected vitrual void OnPreceivedIdentityChanged()
+    public delegate void _OnPerceivedIdentityChanged();
+    public event _OnPerceivedIdentityChanged OnPerceivedIdentityChanged = delegate { };
+    protected virtual void OnPreceivedIdentityChanged()
     {
         if (PreceivedIdentityChanged != null)
         {
-            PreceivedIdesntityChanged(this, [trueIdentity, precievedIdentity])
+            PreceivedIdentityChanged(this, [trueIdentity, precievedIdentity])
         }
     }
     #endregion
