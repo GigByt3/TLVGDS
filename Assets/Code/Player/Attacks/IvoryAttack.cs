@@ -4,7 +4,7 @@ public class IvoryAttack : BasePlayerAttack
     { 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, aimingVector, range);
         
-        int poison = (2)EffectType.HealthPerSecond 
+        int poison = (2)EffectType.HealthPerSecond;
         // Hit logic
         if (hit.transform != null)
         {
@@ -15,8 +15,7 @@ public class IvoryAttack : BasePlayerAttack
             // 2. If one exists, just damage it. Simple!
             if(playerEffectsManager != null)
             {
-            
-                  playerEffectsManager.RpcAddEffect(PlayerEffect poison)
+                  playerEffectsManager.RpcAddEffect(PlayerEffect poison);
             }
        }
     }
