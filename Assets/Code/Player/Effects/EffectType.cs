@@ -13,5 +13,6 @@ public enum EffectType : int
 {
     Speed = 0,
     HealthPerSecond = 1,
+    Stunned = 2
 }
 
