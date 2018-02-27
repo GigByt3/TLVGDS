@@ -18,6 +18,8 @@ public class HitpointsProperty : NetworkBehaviour
     // EVERYONE Event fired when the property takes damage.
     public delegate void _OnDamaged(float amount);
     public event _OnDamaged OnDamaged = delegate { };
+    public delegate void _IDead();
+    public event _IDead IDead = delagate { };
     #endregion
 
     #region Main Methods
@@ -29,7 +31,10 @@ public class HitpointsProperty : NetworkBehaviour
     {
         hitpoints -= damage;
         OnDamaged.Invoke(damage);
-
+        if(hitpoints <= 1) 
+        {
+            IDead();
+        }
         Debug.Log("Damaged!");
     }
     #endregion
