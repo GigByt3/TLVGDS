@@ -24,7 +24,7 @@ public class IdentityProperty : NetworkBehaviour
     {
         if (PreceivedIdentityChanged != null)
         {
-            PreceivedIdentityChanged(this, [trueIdentity, precievedIdentity])
+            PreceivedIdentityChanged(this, int[] [trueIdentity, precievedIdentity])
         }
     }
     #endregion

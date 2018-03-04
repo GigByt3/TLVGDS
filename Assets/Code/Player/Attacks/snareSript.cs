@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class snare : NetworkBehavior
 {
     
-    if(!isServer) { return; }
+    // if(!isServer) { return; }
      void OnTriggerEnter2D(Collider2D other) {
          if(GetComponent<PlayerEffectsManager> =! null )
          {
