@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: f87d55a6da9902b429a0b2672874359f
+guid: 800539b7e81a64851aa889462a3018a4
 timeCreated: 1516582923
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
+  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -57,6 +58,7 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -65,6 +67,7 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -73,6 +76,7 @@ TextureImporter:
     overridden: 0
   - buildTarget: iPhone
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -81,6 +85,7 @@ TextureImporter:
     overridden: 0
   - buildTarget: Android
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -89,6 +94,7 @@ TextureImporter:
     overridden: 0
   - buildTarget: WebGL
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
