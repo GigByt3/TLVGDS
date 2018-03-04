@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 /// <summary>
 /// The Identity property contains logic for keeping track of identity
 /// This property component contains events for external scripts to extend its behaviors.
+/// Hidden Line of Comments... A specter is haunting this code, the specter of...
 /// </summary>
 public class IdentityProperty : NetworkBehaviour
 {

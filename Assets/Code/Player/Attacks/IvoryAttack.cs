@@ -1,3 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Networking;
+
 public class IvoryAttack : BasePlayerAttack
 {
     public override void ServerAttackMethod(Vector3 aimingVector)
