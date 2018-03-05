@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class snare : NetworkBehavior
+public class snareScript : NetworkBehaviour
 {
-    
     // if(!isServer) { return; }
      void OnTriggerEnter2D(Collider2D other) {
          if(GetComponent<PlayerEffectsManager> =! null )
          {
-            int stasis = (int)EffectType.Speed 0;
-            PlayerEffectsManager.RpcAddEffect(PlayerEffect stasis);
+            int zero = 0;
+            int stasis = (zero)EffectType.Speed;
+            PlayerEffectsManager.RpcAddEffect(PlayerEffect(stasis));
          }
     }
 }

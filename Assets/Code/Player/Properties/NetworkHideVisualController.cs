@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class NetworkHideVisualController : NetworkBehavior
+public class NetworkHideVisualController : NetworkBehaviour
 {
     public Sprite Assasin;
-    public Sprite BurgoiseNobelWhoExploitsTheLaborOfTheProlariatFromTheDictorialPlaceOfPowerWeildedByTheControlingClassToSubjugateTheOtherClasses;
-    public int[] sprites = [Assasin, BurgoiseNobelWhoExploitsTheLaborOfTheProlariatFromTheDictorialPlaceOfPowerWeildedByTheControlingClassToSubjugateTheOtherClasses];
+    public Sprite Normmy;
     public AudioSource RevealSound;
     public AudioSource HideSound;
 
@@ -15,18 +14,18 @@ public class NetworkHideVisualController : NetworkBehavior
     #region Events
     public delegate void _OnHide();
     public delegate void _OnReveal();
-    public event _OnHide OnHide = delegate { };
-    public event _OnReveal OnReveal = delegate { };
-    [ClientRPC]
+//  public event _OnHide OnHide = delegate { };
+//  public event _OnReveal OnReveal = delegate { };
+    [ClientRpc]
     protected virtual void OnHide()
     {
-        spriteRenderer.sprite = Assasin;
+        SpriteRenderer.sprite() = Assasin;
         RevealSound.Play();
     }
-    [ClientRPC]
+    [ClientRpc]
     protected virtual void OnReveal()
     {
-        spriteRenderer.sprite = BurgoiseNobelWhoExploitsTheLaborOfTheProlariatFromTheDictorialPlaceOfPowerWeildedByTheControlingClassToSubjugateTheOtherClasses;
+        SpriteRenderer.sprite = Normmy;
         RevealSound.Play();
     }
     #endregion

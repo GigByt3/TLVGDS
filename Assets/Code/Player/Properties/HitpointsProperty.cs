@@ -19,7 +19,7 @@ public class HitpointsProperty : NetworkBehaviour
     public delegate void _OnDamaged(float amount);
     public event _OnDamaged OnDamaged = delegate { };
     public delegate void _IDead();
-    public event _IDead IDead = delagate { };
+    public event _IDead IDead = delegate { };
     #endregion
 
     #region Main Methods
