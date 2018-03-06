@@ -40,7 +40,7 @@ public class HitpointsProperty : NetworkBehaviour
     [ClientRPC]
     public void RpcDeath()
     {
-        this.transform.position() = new Vector3(1000, 1000, -1);
+    //    this.transform.position() = new Vector3(1000, 1000, -1);
     }
     #endregion
 }
