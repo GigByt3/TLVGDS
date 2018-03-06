@@ -23,7 +23,7 @@ public class IdentityProperty : NetworkBehaviour
     protected virtual void OnPreceivedIdentityChanged()
     {
         object[] args = {trueIdentity, precievedIdentity};
-        if (!(PreceivedIdentityChanged == null))
+        if (PreceivedIdentityChanged =! null)
         {
             PreceivedIdentityChanged(this, args);
         }
