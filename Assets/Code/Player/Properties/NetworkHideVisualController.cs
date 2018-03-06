@@ -7,6 +7,7 @@ public class NetworkHideVisualController : NetworkBehaviour
 {
     public Sprite Assasin;
     public Sprite Normmy;
+    private SpriteRenderer spriteRenderer;
     public AudioSource RevealSound;
     public AudioSource HideSound;
 
@@ -19,13 +20,13 @@ public class NetworkHideVisualController : NetworkBehaviour
     [ClientRpc]
     protected virtual void OnHide()
     {
-        SpriteRenderer.sprite() = Assasin;
+        this.SpriteRenderer.sprite() = Assasin;
         RevealSound.Play();
     }
     [ClientRpc]
     protected virtual void OnReveal()
     {
-        SpriteRenderer.sprite = Normmy;
+        this.SpriteRenderer.sprite = Normmy;
         RevealSound.Play();
     }
     #endregion
