@@ -9,6 +9,6 @@ public class BlueAttack : BasePlayerAttack
 
     public override void ServerAttackMethod(Vector3 aimingVector)
     {
-        Instantiate(snare, aimingVector, Quaternion.identity);      
+    //    Instantiate(snare, aimingVector, Quaternion.identity);      
     }
 }
