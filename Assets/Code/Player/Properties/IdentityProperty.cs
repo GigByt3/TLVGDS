@@ -11,7 +11,6 @@ using UnityEngine.Networking;
 public class IdentityProperty : NetworkBehaviour
 {
     #region Fields
-    /*
     [SyncVar]
     public string trueIdentity = SystemInfo.deviceUniqueIdentifier;
     [SyncVar]
@@ -19,15 +18,15 @@ public class IdentityProperty : NetworkBehaviour
     #endregion
 
     #region Events
-    public delegate void _OnPerceivedIdentityChanged();
-    public event _OnPerceivedIdentityChanged OnPerceivedIdentityChanged = delegate { };
-    protected virtual void OnPerceivedIdentityChanged()
+    public delegate void _OnPreceivedIdentityChanged();
+    public event _OnPreceivedIdentityChanged OnPreceivedIdentityChanged = delegate { };
+    protected virtual void OnPreceivedIdentityChanged()
     {
         object[] args = {trueIdentity, precievedIdentity};
-    /*    if (PreceivedIdentityChanged =! null)
+        if (PreceivedIdentityChanged != null)
         {
             PreceivedIdentityChanged(this, args);
         }
-    }*/
+    }
     #endregion
 }
