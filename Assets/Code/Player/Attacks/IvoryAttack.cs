@@ -8,7 +8,6 @@ public class IvoryAttack : BasePlayerAttack
     public override void ServerAttackMethod(Vector3 aimingVector)
     { 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, aimingVector, range);
-        int theNumberTwoBecauseCsharp = 2;
 
         // Hit logic
         if (hit.transform != null)
@@ -20,7 +19,7 @@ public class IvoryAttack : BasePlayerAttack
             // 2. If one exists, just damage it. Simple!
             if(playerEffectsManager != null)
             {
-                //  playerEffectsManager.RpcAddEffect(PlayerEffect (theNumberTwoBecauseCsharp)EffectType.HealthPerSecond);
+                //  playerEffectsManager.RpcAddEffect(PlayerEffect (2)EffectType.HealthPerSecond);
                 //This isn't working...
             }
        }

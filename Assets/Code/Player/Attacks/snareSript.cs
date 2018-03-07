@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class snareScript : NetworkBehaviour
 {
     // if(!isServer) { return; }
-     void OnTriggerEnter2D(Collider2D other) {
+/*     void OnTriggerEnter2D(Collider2D other) {
          if(GetComponent<PlayerEffectsManager> =! null )
          {
             int zero = 0;
@@ -14,4 +14,5 @@ public class snareScript : NetworkBehaviour
             PlayerEffectsManager.RpcAddEffect(PlayerEffect(stasis));
          }
     }
+    */
 }

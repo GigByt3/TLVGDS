@@ -7,27 +7,30 @@ public class NetworkHideVisualController : NetworkBehaviour
 {
     public Sprite Assasin;
     public Sprite Normmy;
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer SneakySpriteRenderer = this.GetComponent<SpriteRenderer>();
     public AudioSource RevealSound;
     public AudioSource HideSound;
 
-
-    #region Events
-    public delegate void _OnHide();
-    public delegate void _OnReveal();
-//  public event _OnHide OnHide = delegate { };
-//  public event _OnReveal OnReveal = delegate { };
+ 
+    #region Events  
+    public delegate void _OnHideThis();
+    public static event _OnHideThis OnHideThis;
     [ClientRpc]
     protected virtual void OnHide()
     {
-        this.SpriteRenderer.sprite() = Assasin;
-        RevealSound.Play();
-    }
+        OnHideThis();
+        SneakySpriteRenderer.Sprite = Normmy;
+        HideSound.Play();
+    }  
+
+    public delegate void _OnRevealThis();
+    public event _OnRevealThis OnRevealThis;
     [ClientRpc]
     protected virtual void OnReveal()
     {
-        this.SpriteRenderer.sprite = Normmy;
+        OnRevealThis();
+        SneakySpriteRenderer.Sprite = Assasin;
         RevealSound.Play();
-    }
+    } 
     #endregion
 }

@@ -26,7 +26,7 @@ public class HitpointsProperty : NetworkBehaviour
     /// <summary>
     /// Called from the server, this deals damage to the player.
     /// </summary>
-    [ClientRPC]
+    [ClientRpc]
     public void RpcDealDamage(float damage)
     {
         hitpoints -= damage;
@@ -37,7 +37,7 @@ public class HitpointsProperty : NetworkBehaviour
         }
         Debug.Log("Damaged!");
     }
-    [ClientRPC]
+    [ClientRpc]
     public void RpcDeath()
     {
     //    this.transform.position() = new Vector3(1000, 1000, -1);

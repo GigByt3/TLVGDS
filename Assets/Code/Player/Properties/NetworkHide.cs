@@ -19,14 +19,14 @@ public class NetworkHide : NetworkBehaviour
     public void Reveal(float seconds)
     {
         hidden = false;
-        OnReveal();
+        //OnRevealThis();
         float startClock = time;
         while(hidden == false)
         {
             if(startClock == seconds)
             {
                 hidden = true;
-                OnHide();
+            //    OnHideThis();
             }
         }
     }

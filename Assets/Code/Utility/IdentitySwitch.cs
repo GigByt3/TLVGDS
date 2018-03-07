@@ -8,6 +8,7 @@ using UnityEngine;
 // At present this class inherits the BasePlayerAttack as the functionality of the attack is very similar
 public class IdentitySwitch : BasePlayerAttack
 {
+    /*
     public override void ServerAttackMethod(Vector3 aimingVector)
     { 
         RaycastHit2D getID = Physics2D.Raycast(transform.position, aimingVector, range);
@@ -26,4 +27,5 @@ public class IdentitySwitch : BasePlayerAttack
             }
         }
     }
+    */
 }
