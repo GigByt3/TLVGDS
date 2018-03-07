@@ -6,13 +6,15 @@ using UnityEngine.Networking;
 public class snareScript : NetworkBehaviour
 {
     // if(!isServer) { return; }
-/*     void OnTriggerEnter2D(Collider2D other) {
-         if(GetComponent<PlayerEffectsManager> =! null )
+     void OnTriggerEnter2D(Collider2D other) {
+        if (GetComponent<PlayerEffectsManager>() != null )
          {
+            PlayerEffectsManager playereffectsmanager = GetComponent<PlayerEffectsManager>();
             int zero = 0;
-            int stasis = (zero)EffectType.Speed;
-            PlayerEffectsManager.RpcAddEffect(PlayerEffect(stasis));
+            int stasis = (int)EffectType.Speed;
+            PlayerEffect Stunned = new PlayerEffect(/*EffectType.Stunned,*/ 2, 1.0f, 0.0f, "");
+            playereffectsmanager.RpcAddEffect(Stunned);
          }
     }
-    */
 }
+//
