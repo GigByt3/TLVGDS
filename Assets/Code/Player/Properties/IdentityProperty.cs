@@ -19,9 +19,10 @@ public class IdentityProperty : NetworkBehaviour
 
     #region Events
     public delegate void _OnPreceivedIdentityChanged();
-    public event _OnPreceivedIdentityChanged OnPreceivedIdentityChanged = delegate { };
+    public event _OnPreceivedIdentityChanged OnPreceivedIdentityChanged;
     protected virtual void OnPreceivedIdentityChanged(PreceivedIdentityChanged)
     {
+        OnPreceivedIdentityChanged();
         object[] args = {trueIdentity, precievedIdentity};
         if (PreceivedIdentityChanged != null)
         {
