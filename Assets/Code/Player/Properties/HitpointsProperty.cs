@@ -19,23 +19,28 @@ public class HitpointsProperty : NetworkBehaviour
     public delegate void _OnDamaged(float amount);
     public event _OnDamaged OnDamaged = delegate { };
     public delegate void _IDead();
-    public event _IDead IDead = delagate { };
+    public event _IDead IDead = delegate { };
     #endregion
 
     #region Main Methods
     /// <summary>
     /// Called from the server, this deals damage to the player.
     /// </summary>
-    [ClientRpc]
+    [ClientRPC]
     public void RpcDealDamage(float damage)
     {
         hitpoints -= damage;
         OnDamaged.Invoke(damage);
-        if(hitpoints <= 1) 
+        if(hitpoints <= 1 && isServer) 
         {
-            IDead();
+            IDead.Invoke();
         }
         Debug.Log("Damaged!");
+    }
+    [ClientRPC]
+    public void RpcDeath()
+    {
+    //    this.transform.position() = new Vector3(1000, 1000, -1);
     }
     #endregion
 }

@@ -14,13 +14,13 @@ public class IdentitySwitch : BasePlayerAttack
         if (getID.transform != null)
         {
             // Searching for Identity Property
-            IdentityProperty identityProperty = getID.transform.GetComponent<IdentityProperties.cs>();
-            string ourIdentity = this.GetComponent<IdentityProperties.cs>().precievedIdentity;
+            IdentityProperty identityProperty = getID.transform.GetComponent<IdentityProperty>();
+            float ourIdentity = this.GetComponent<IdentityProperty>().precievedIdentity;
 
             // Switching identitys
             if(identityProperty != null)
             {
-                string storedPrecievedIdentity = identityProperty.precievedIdentity;
+                float storedPrecievedIdentity = identityProperty.precievedIdentity;
                 identityProperty.precievedIdentity = ourIdentity;
                 ourIdentity = storedPrecievedIdentity;
             }
