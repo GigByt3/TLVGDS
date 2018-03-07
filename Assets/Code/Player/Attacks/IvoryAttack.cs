@@ -19,8 +19,8 @@ public class IvoryAttack : BasePlayerAttack
             // 2. If one exists, just damage it. Simple!
             if(playerEffectsManager != null)
             {
-                //  playerEffectsManager.RpcAddEffect(PlayerEffect (2)EffectType.HealthPerSecond);
-                //This isn't working...
+                playerEffectsManager.RpcAddEffect(new PlayerEffect (/*EffectType.HealthPerSecond*/ 1, 2.0f,0.5f, ""));
+                //I think I fixed this with Jake at MV code club
             }
        }
     }
