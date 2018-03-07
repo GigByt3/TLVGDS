@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class NetworkHide : NetworkBehaviour
+public class NetworkHide : NetworkBehavior
 {
+    [SyncVar];
+    boolean hidden = false;
     [SyncVar]
-    bool hidden = false;
-    [SyncVar]
-    float time = Time.deltaTime;
+    int time = Time.deltaTime;
 
     #region Methods
     private void Update()
@@ -19,8 +19,8 @@ public class NetworkHide : NetworkBehaviour
     public void Reveal(float seconds)
     {
         hidden = false;
-        OnReveal();
-        float startClock = time;
+        OnReveal()
+        int startClock = time;
         while(hidden == false)
         {
             if(startClock == seconds)
