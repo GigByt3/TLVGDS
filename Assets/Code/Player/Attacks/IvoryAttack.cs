@@ -8,20 +8,19 @@ public class IvoryAttack : BasePlayerAttack
     public override void ServerAttackMethod(Vector3 aimingVector)
     { 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, aimingVector, range);
-        int theNumberTwoBecauseCsharp = 2;
-
+        
+        int poison = (2)EffectType.HealthPerSecond;
         // Hit logic
         if (hit.transform != null)
         {
             // How to damage players from the server but using effects on contact: 
             // 1. Search for a PlayerEffectsManager:
-            PlayerEffectsManager playerEffectsManager = hit.transform.GetComponent<PlayerEffectsManager>();
+            PlayerEffectsManager playerEffectsManager = hit.transform.GetComponent<PlayerEffectsManager.cs>();
 
             // 2. If one exists, just damage it. Simple!
             if(playerEffectsManager != null)
             {
-                //  playerEffectsManager.RpcAddEffect(PlayerEffect (theNumberTwoBecauseCsharp)EffectType.HealthPerSecond);
-                //This isn't working...
+                  playerEffectsManager.RpcAddEffect(PlayerEffect poison);
             }
        }
     }
