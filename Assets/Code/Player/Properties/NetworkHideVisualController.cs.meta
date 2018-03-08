@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: 323dbedb797814c668dcb60e6cddb30b
-timeCreated: 1520195679
+timeCreated: 1520475143
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Assasin: {fileID: 21300000, guid: c8d12b75080803047b5fd7517950be5a, type: 3}
+  - Normmy: {fileID: 21300000, guid: 0ce3f97b9d9c5104f9ef69b770ed9cfa, type: 3}
+  - RevealSound: {instanceID: 0}
+  - HideSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

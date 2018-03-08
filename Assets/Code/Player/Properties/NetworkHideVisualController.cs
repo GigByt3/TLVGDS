@@ -7,7 +7,7 @@ public class NetworkHideVisualController : NetworkBehaviour
 {
     public Sprite Assasin;
     public Sprite Normmy;
-    private SpriteRenderer SneakySpriteRenderer = this.GetComponent<SpriteRenderer>();
+    private SpriteRenderer SneakySpriteRenderer = GetComponent<SpriteRenderer>();
     public AudioSource RevealSound;
     public AudioSource HideSound;
 
@@ -19,8 +19,11 @@ public class NetworkHideVisualController : NetworkBehaviour
     protected virtual void OnHide()
     {
         OnHideThis();
-        SneakySpriteRenderer.Sprite = Normmy;
-        HideSound.Play();
+        if(SneakySpriteRenderer != null)
+        {
+            this.SneakySpriteRenderer.Sprite = Normmy;
+            HideSound.Play();
+        }
     }  
 
     public delegate void _OnRevealThis();
@@ -29,7 +32,7 @@ public class NetworkHideVisualController : NetworkBehaviour
     protected virtual void OnReveal()
     {
         OnRevealThis();
-        SneakySpriteRenderer.Sprite = Assasin;
+        this.SneakySpriteRenderer.Sprite = Assasin;
         RevealSound.Play();
     } 
     #endregion
