@@ -10,8 +10,6 @@ public class snareScript : NetworkBehaviour
         if (GetComponent<PlayerEffectsManager>() != null )
          {
             PlayerEffectsManager playereffectsmanager = GetComponent<PlayerEffectsManager>();
-            int zero = 0;
-            int stasis = (int)EffectType.Speed;
             PlayerEffect Stunned = new PlayerEffect(/*EffectType.Stunned,*/ 2, 1.0f, 0.0f, "");
             playereffectsmanager.RpcAddEffect(Stunned);
          }
