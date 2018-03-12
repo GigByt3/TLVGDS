@@ -1,0 +1,40 @@
+using UnityEngine;
+using System.Collections;
+
+public class BaseAttackVisualEffect : MonoBehaviour
+{
+
+    
+    private LineRenderer LineRenderer;
+    public Transform LaserHit;
+
+    // Use this for initialization
+    void Start()
+    {
+
+        LineRenderer = GetComponent<LineRenderer>();
+        LineRenderer.enabled = false;
+        LineRenderer.useWorldSpace = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.dir);
+
+        Debug.DrawLine(transform.position, hit.point);
+        LaserHit.position = hit.point;
+        LineRenderer.SetPosition(0, transform.position);
+        LineRenderer.SetPosition(0, LaserHit.position);
+
+        if (hit.transform != null))
+        {
+            LineRenderer.enabled = true;
+        }
+        else
+        {
+            LineRenderer.enabled = false;
+        }
+    }
+}
