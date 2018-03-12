@@ -15,7 +15,7 @@ public class NetworkHideVisualController : NetworkBehaviour
     public delegate void _OnHideThis();
     public static event _OnHideThis OnHideThis;
 
-    [ClientRpc]
+    //[ClientRpc]
     protected virtual void OnHide()
     {
         OnHideThis();
@@ -26,7 +26,7 @@ public class NetworkHideVisualController : NetworkBehaviour
     public delegate void _OnRevealThis();
     public event _OnRevealThis OnRevealThis;
 
-    [ClientRpc]
+    //[ClientRpc]
     protected virtual void OnReveal()
     {
         OnRevealThis();
