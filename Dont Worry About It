@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NetworkPlayer : MonoBehaviour 
+{
+	[SerializeFeild] private GameObject playerCamera;
+	[SerializeFeild] private MonoBehavior[ ] playerControlScripts
+	// Use this for initialization
+	void Start () {
+		photonView = GetComponent<photonView>();
+
+		Initialize();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if(photonView.isMine)
+		{
+
+		}
+		else
+		{
+			playerCamera.SetActive(false);
+
+			foreach(MonoBehaviour # in playerControlScripts)
+			{
+				m.enabled =false;
+			}
+		}
+	}
+
+	
+}
+
+
+using UnityEngine;
+using System.Collections;
+
+public class CameraController : MonoBehaviour {
+
+    public GameObject player;
+
+    private Vector3 offset;
+
+    void Start ()
+    {
+        offset = transform.position - player.transform.position;
+    }
+    
+    void LateUpdate ()
+    {
+        transform.position = player.transform.position + offset;
+    }
+}
+
+using UnityEngine;
+using System.Collections;
+
+public class PlayerMovement : MonoBehaviour {
+
+    public float speed;
+
+    private Rigidbody rb;
+
+    void Start ()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate ()
+    {
+        float moveHorizontal = Input.GetAxis ("Horizontal");
+        float moveVertical = Input.GetAxis ("Vertical");
+
+        Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+
+        rb.AddForce (movement * speed);
+    }
+}
