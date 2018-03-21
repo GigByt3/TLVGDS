@@ -78,3 +78,22 @@ public class PlayerMovement : MonoBehaviour {
         rb.AddForce (movement * speed);
     }
 }
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PhotonNetworkManager : Photon.MonoBehavior
+{
+	[SerializeFeild] Text connectText;
+	[SerializeFeild] GameObject player;
+	[SerializeFeild] Transform spawnPlayer
+	[SerializeFeild] GameObject lobbyCamera
+	
+	private void Start()
+	{
+		PhotonNetwork.ConnectUsingSettings("Famalambam");
+	}
+
+}
