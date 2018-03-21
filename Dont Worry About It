@@ -2,35 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworkPlayer : MonoBehaviour 
+namespace Networking.Completed
 {
-	[SerializeFeild] private GameObject playerCamera;
-	[SerializeFeild] private MonoBehavior[ ] playerControlScripts
-	// Use this for initialization
-	void Start () {
-		photonView = GetComponent<photonView>();
+	public class NetworkPlayer : MonoBehaviour 
+	{
+		[SerializeFeild] private GameObject playerCamera;
+		[SerializeFeild] private MonoBehavior[ ] playerControlScripts
+		// Use this for initialization
+		void Start () {
+			photonView = GetComponent<photonView>();
 
-		Initialize();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(photonView.isMine)
-		{
-
+			Initialize();
 		}
-		else
-		{
-			playerCamera.SetActive(false);
 
-			foreach(MonoBehaviour # in playerControlScripts)
+		// Update is called once per frame
+		void Update () {
+			if(photonView.isMine)
 			{
-				m.enabled =false;
+
+			}
+			else
+			{
+				playerCamera.SetActive(false);
+
+				foreach(MonoBehaviour # in playerControlScripts)
+				{
+					m.enabled =false;
+				}
+			}
+		}
+
+		private void Update();
+		{
+			if(!photonViewisMine)
+			{
+				return;
+			}
+
+			if(Input.GetKeyDown(KeyCode.E))
+			{
+				playerHealth -= 5;
+			}
+		}
+
+		private void OnPhotonVeiwSerialize(PhotonStream stream, PhotonMessageInfo info)
+		{
+			if(stream.isWriting)
+			{
+				stream.SendNext(PlayerHealth);
+			}
+			else if(stream.isReading)
+			{
+				playerHealth - (int)stream.ReceiveNext();
 			}
 		}
 	}
-
-	
 }
 
 
@@ -101,4 +127,19 @@ public class PhotonNetworkManager : Photon.MonoBehavior
 		Debug.Log("You have Joined the Lobby.")
 	}
 
+}
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerUI : MonoBehavior
+{
+	[SerializeFeild] private Text m_UIText;
+
+	public void UpdateUI(int newHealth)
+	{
+		m_UItext.text - newHealth.toString();
+	}
 }
