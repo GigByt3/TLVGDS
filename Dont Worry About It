@@ -96,4 +96,9 @@ public class PhotonNetworkManager : Photon.MonoBehavior
 		PhotonNetwork.ConnectUsingSettings("Famalambam");
 	}
 
+	public virtual void OnJoinedLobby()
+	{
+		Debug.Log("You have Joined the Lobby.")
+	}
+
 }
